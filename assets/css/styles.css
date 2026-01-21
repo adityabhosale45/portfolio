@@ -1,0 +1,600 @@
+:root {
+    --space-1: .5rem;
+    --space-2: .75rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2rem;
+    --space-6: 3rem;
+
+    /* Primary color */
+    --accent: #001234;
+    --accent-04: rgba(0, 18, 52, 0.04);
+    --accent-08: rgba(0, 18, 52, 0.08);
+    --accent-12: rgba(0, 18, 52, 0.12);
+    --accent-16: rgba(0, 18, 52, 0.16);
+    --accent-18: rgba(0, 18, 52, 0.18);
+    --accent-25: rgba(0, 18, 52, 0.25);
+    --accent-50: rgba(0, 18, 52, 0.50);
+    --accent-75: rgba(0, 18, 52, 0.75);
+
+    /* Secondary blue accent color */
+    --accent-blue: #2563eb;
+    --accent-blue-04: rgba(37, 99, 235, 0.04);
+    --accent-blue-08: rgba(37, 99, 235, 0.08);
+    --accent-blue-12: rgba(37, 99, 235, 0.12);
+    --accent-blue-16: rgba(37, 99, 235, 0.16);
+    --accent-blue-18: rgba(37, 99, 235, 0.18);
+    --accent-blue-25: rgba(37, 99, 235, 0.25);
+    --accent-blue-50: rgba(37, 99, 235, 0.50);
+    --accent-blue-75: rgba(37, 99, 235, 0.75);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.section {
+    padding: var(--space-6) 0;
+}
+
+.container {
+    width: min(1150px, 90%);
+    margin: 0 auto;
+    scroll-margin-top: 0rem;
+}
+
+body {
+    font-family: "Google+Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+/* ===== HERO ===== */
+.hero {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    /* 70 / 30 content / visual */
+    align-items: center;
+    padding: 10rem 0 2.5rem;
+}
+
+/* ensure content column doesn't get too wide */
+.hero-content {
+    max-width: 95%;
+}
+
+/* keep visual aligned to the right on larger screens */
+.hero-visual {
+    display: grid;
+    gap: 1rem;
+    justify-items: end;
+    align-items: center;
+}
+
+@media (max-width: 700px) {
+
+    /* switch to stacked layout only on smaller screens */
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 3rem;
+        align-items: start;
+    }
+
+    .hero-visual {
+        justify-items: start;
+    }
+}
+
+.hero-kicker, .skillsTools .hero-kicker {
+    font-size: 1rem;
+    margin: 0 0 0.25rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.hero-title, .work-title {
+    margin: 0 0 1.5rem;
+    font-size: clamp(2.1rem, 4.8vw, 3.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+}
+
+.hero-subtitle {
+    margin: 0 0 1.5rem;
+    color: var(--accent-50);
+    font-size: 1.15rem;
+}
+
+.underline {
+    position: relative;
+    display: inline-block;
+}
+
+.underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.05em;
+    width: 100%;
+    height: 0.28em;
+    background: var(--accent-blue-18);
+    z-index: -1;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0 0 1.25rem;
+}
+
+.tag {
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--accent-04);
+    padding: 0.5rem 1rem;
+    color: var(--accent-75);
+    font-size: 0.9rem;
+}
+
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin: 0 0 1.25rem;
+}
+
+.btn.ghost {
+    background: #fff;
+    border: 1px solid var(--border);
+    color: #0f172a;
+}
+
+.btn.linklike {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.hero-meta {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: var(--text-muted);
+    display: grid;
+    gap: 0.35rem;
+}
+
+.portrait {
+    width: min(340px, 100%);
+    border-radius: 999px;
+    /* box-shadow: 0 14px 45px rgba(15, 23, 42, 0.10); */
+    aspect-ratio: 0.75 / 1;
+    object-fit: cover;
+    object-position: top;
+    filter: grayscale(1) brightness(1.35);
+}
+
+.hero-card {
+    width: min(360px, 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1rem 1rem;
+    background: var(--bg-muted);
+}
+
+.hero-card-title {
+    margin: 0 0 0.35rem;
+    font-weight: 800;
+}
+
+.hero-card-text {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.hero,
+.about-container {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1000ms ease;
+}
+
+.hero.hero-show,
+.about-container.about-container-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about {
+    padding-top: 4rem;
+}
+
+.experience {
+    margin-top: 5rem;
+}
+
+.about-bio,
+.experience {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.about-bio h1,
+.experience h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: var(--accent);
+}
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 3rem;
+    }
+
+    .hero-visual {
+        justify-items: start;
+    }
+}
+
+/* Accessible skip link */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    padding: 0.5rem 0.75rem;
+    background: #111;
+    color: #fff;
+    z-index: 9999;
+    border-radius: 4px;
+}
+
+/* Header: fixed translucent capsule */
+.site-header {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(980px, 90%);
+    border-radius: 9999px;
+    padding: 0.35rem;
+    background: rgba(255, 255, 255, 0.62);
+    backdrop-filter: blur(8px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+    z-index: 9999;
+
+    /* use primary color for header text/links instead of default black */
+    color: var(--accent);
+}
+
+/* keep layout compact inside capsule */
+.header-inner {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.45rem 0.6rem;
+}
+
+/* smaller logo for capsule */
+.logo img {
+    height: 28px;
+    display: block;
+}
+
+/* Brand: logo + name */
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.site-name {
+    font-weight: 500;
+    color: var(--accent);
+    font-size: 1.2rem;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.site-nav .nav-list {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.site-nav a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 400;
+    padding: 0.45rem 0.65rem;
+    border-radius: 9999px;
+    transition: background .12s ease, color .12s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+    color: var(--accent-blue);
+    outline: none;
+}
+
+/* Resume "like" button */
+.btn-like {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    padding: 0.45rem 0.8rem;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 9999px;
+    border: 1px solid var(--accent-16);
+    box-shadow: 0 6px 20px var(--accent-12);
+}
+
+/* Ensure content isn't hidden beneath fixed header */
+body {
+    padding-top: 4.5rem;
+}
+
+/* Mobile adjustments: capsule stays, show toggle */
+@media (max-width: 768px) {
+    .container.header-inner {
+        gap: 0.5rem;
+    }
+
+    /* Mobile toggle: hidden on desktop, visible on small screens */
+    .nav-toggle {
+        display: none;
+        background: transparent;
+        border: 0;
+        padding: 0.25rem;
+        cursor: pointer;
+        z-index: 10001;
+    }
+
+    .site-nav {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        right: 1rem;
+        left: 1rem;
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: 12px;
+        box-shadow: 0 8px 28px rgba(10, 10, 10, 0.06);
+        display: none;
+        padding: 0.75rem 1rem;
+    }
+
+    .site-nav.open {
+        display: block;
+    }
+
+    .site-nav .nav-list {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* compress capsule padding a little */
+    .site-header {
+        padding: 0.25rem;
+    }
+
+    /* keep resume button visible but smaller on mobile */
+    .btn-like {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Utility: visually hidden (screen-reader only) */
+.sr-only {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+/* Keep capsule compact on very small screens */
+@media (max-width: 420px) {
+    .site-name {
+        display: none;
+    }
+}
+
+/* Centered, slightly wider container for the hero (a bit longer than the header) */
+.container--wide {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    /* 70 / 30 content / visual */
+    gap: 2rem;
+    align-items: center;
+    padding: 4rem 0 2.5rem;
+}
+
+/* Rotating words used in headings */
+.rotating {
+    display: inline-block;
+    position: relative;
+    min-width: 9ch;
+    /* avoid layout jump when words change */
+    height: 1em;
+    vertical-align: baseline;
+    overflow: visible;
+}
+
+.rotating-item {
+    position: absolute;
+    left: 0;
+    top: 1px;
+    opacity: 0;
+    transform: translateY(0.25rem);
+    transition: opacity .45s ease, transform .45s ease;
+    white-space: nowrap;
+}
+
+.rotating-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rotating-item {
+        transition: none;
+    }
+}
+
+.right p,
+.company-right .description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    font-weight: 300;
+    color: var(--accent-75);
+}
+
+.description {
+    margin-top: 0;
+}
+
+.about-profile .portrait {
+    width: 180px;
+    border-radius: 120px;
+    box-shadow: 0 14px 45px rgba(15, 23, 42, 0.10);
+}
+
+.right .hightlight p span {
+    font-weight: 500;
+}
+
+.float-right {
+    float: right;
+}
+
+.company {
+    margin-bottom: 4rem;
+}
+
+.company-logo {
+    margin: 0.5rem 0rem;
+}
+
+/* Footer */
+.site-footer {
+    background: #fff;
+    color: var(--accent);
+    margin-top: 5rem;
+    padding: 4rem 0;
+}
+
+.footer-top {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+}
+
+.footer-top h2 {
+    font-size: 8rem;
+    margin: 0;
+    color: var(--accent-08);
+    line-height: 0.8;
+}
+
+.footer-link, .footer-top p, .footer-right p {
+    font-size: 1.1rem;
+    color: var(--accent-50);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.footer-top p {
+    font-weight: 300;
+    color: var(--accent-75);
+}
+
+.footer-link:hover,
+.footer-link:focus {
+    color: var(--accent-blue);
+    outline: none;
+}
+
+.footer-bottom {
+    margin-top: 1rem;
+    font-weight: 600;
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+}
+
+.footer-left{
+    display: flex;
+    gap: 5rem;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 600px) {
+    .site-footer .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .footer-left {
+        justify-content: center;
+    }
+}
+
+.skillsTools{
+    margin-top: 5rem;
+}
+
+.skillsTools h2{
+    font-size: 1.25rem;
+    margin: 0rem 0 0.5rem;
+}
+
+.skillsTools p{
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 300;
+    color: var(--accent-75);
+    margin: 0;
+}
+
+.skillsTools .skills, .skillsTools .development, .skillsTools .education{
+    margin-top: 2rem;
+}
+
+.work{
+    margin-top: 15rem;
+    scroll-margin-top: 10rem;
+}
