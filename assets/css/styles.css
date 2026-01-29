@@ -210,11 +210,7 @@ body {
     transform: translateY(0);
 }
 
-.about {
-    padding-top: 4rem;
-}
-
-.experience {
+.experience, .about {
     margin-top: 5rem;
 }
 
