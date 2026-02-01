@@ -103,4 +103,5 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".hero")?.classList.add("hero-show");
     document.querySelector(".about-container")?.classList.add("about-container-show");
+    document.querySelector(".experience-container")?.classList.add("experience-container-show");
   });
