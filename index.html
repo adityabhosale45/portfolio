@@ -118,6 +118,31 @@
         </div>
     </footer>
 
+    <!-- Hidden Analytics Panel -->
+    <div id="analytics-panel" class="analytics-panel">
+        <div class="analytics-content">
+            <div class="analytics-header">
+                <h3>Analytics</h3>
+                <button id="analytics-close" class="analytics-close" aria-label="Close analytics">&times;</button>
+            </div>
+            <div class="analytics-body">
+                <div class="analytics-stat">
+                    <span class="stat-label">Total Views:</span>
+                    <span class="stat-value" id="total-views">0</span>
+                </div>
+                <div class="analytics-stat">
+                    <span class="stat-label">Unique Visitors:</span>
+                    <span class="stat-value" id="unique-visitors">0</span>
+                </div>
+                <div class="analytics-stat">
+                    <span class="stat-label">Last Visit:</span>
+                    <span class="stat-value" id="last-visit">Never</span>
+                </div>
+                <button id="analytics-reset" class="analytics-reset">Reset Data</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
     <script defer>
