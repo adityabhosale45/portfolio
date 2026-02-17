@@ -48,6 +48,108 @@ body {
     margin: 0;
 }
 
+/* Analytics Panel */
+.analytics-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    border: 1px solid var(--accent-08);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    z-index: 9999;
+    max-width: 300px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.analytics-panel.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.analytics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--accent-08);
+}
+
+.analytics-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.analytics-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--accent-50);
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.analytics-close:hover {
+    color: var(--accent);
+}
+
+.analytics-body {
+    padding: var(--space-4);
+}
+
+.analytics-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-3);
+    font-size: 0.9rem;
+}
+
+.stat-label {
+    color: var(--accent-75);
+    font-weight: 500;
+}
+
+.stat-value {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.analytics-reset {
+    width: 100%;
+    padding: var(--space-2) var(--space-3);
+    background: var(--accent-04);
+    border: 1px solid var(--accent-12);
+    border-radius: 4px;
+    color: var(--accent);
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    margin-top: var(--space-3);
+}
+
+.analytics-reset:hover {
+    background: var(--accent-08);
+    border-color: var(--accent-16);
+}
+
 /* ===== HERO ===== */
 .hero {
     display: grid;
