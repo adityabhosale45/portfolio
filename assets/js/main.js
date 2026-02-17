@@ -105,3 +105,100 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector(".about-container")?.classList.add("about-container-show");
     document.querySelector(".experience-container")?.classList.add("experience-container-show");
   });
+
+// Analytics tracking
+(function initAnalytics() {
+  const ANALYTICS_KEY = 'portfolio_analytics';
+  const VISITOR_ID_KEY = 'portfolio_visitor_id';
+  
+  function getOrCreateVisitorId() {
+    let id = localStorage.getItem(VISITOR_ID_KEY);
+    if (!id) {
+      id = 'visitor_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem(VISITOR_ID_KEY, id);
+    }
+    return id;
+  }
+  
+  function updateAnalytics() {
+    let data = JSON.parse(localStorage.getItem(ANALYTICS_KEY)) || {
+      totalViews: 0,
+      uniqueVisitors: new Set(),
+      lastVisit: null
+    };
+    
+    data.totalViews = (data.totalViews || 0) + 1;
+    const visitorId = getOrCreateVisitorId();
+    
+    if (!Array.isArray(data.uniqueVisitors)) {
+      data.uniqueVisitors = [];
+    }
+    if (!data.uniqueVisitors.includes(visitorId)) {
+      data.uniqueVisitors.push(visitorId);
+    }
+    
+    data.lastVisit = new Date().toLocaleString();
+    
+    localStorage.setItem(ANALYTICS_KEY, JSON.stringify(data));
+    updateAnalyticsDisplay();
+  }
+  
+  function updateAnalyticsDisplay() {
+    const data = JSON.parse(localStorage.getItem(ANALYTICS_KEY)) || {
+      totalViews: 0,
+      uniqueVisitors: [],
+      lastVisit: null
+    };
+    
+    document.getElementById('total-views').textContent = data.totalViews;
+    document.getElementById('unique-visitors').textContent = data.uniqueVisitors.length;
+    document.getElementById('last-visit').textContent = data.lastVisit || 'Never';
+  }
+  
+  function toggleAnalyticsPanel() {
+    const panel = document.getElementById('analytics-panel');
+    panel.classList.toggle('visible');
+  }
+  
+  function resetAnalytics() {
+    if (confirm('Are you sure you want to reset all analytics data?')) {
+      localStorage.removeItem(ANALYTICS_KEY);
+      localStorage.removeItem(VISITOR_ID_KEY);
+      updateAnalyticsDisplay();
+      updateAnalytics();
+    }
+  }
+  
+  // Update analytics on page load
+  updateAnalytics();
+  
+  // Toggle panel with Ctrl+Shift+A
+  document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+      e.preventDefault();
+      toggleAnalyticsPanel();
+    }
+  });
+  
+  // Close button
+  const closeBtn = document.getElementById('analytics-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', toggleAnalyticsPanel);
+  }
+  
+  // Reset button
+  const resetBtn = document.getElementById('analytics-reset');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', resetAnalytics);
+  }
+  
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const panel = document.getElementById('analytics-panel');
+      if (panel.classList.contains('visible')) {
+        panel.classList.remove('visible');
+      }
+    }
+  });
+})();
