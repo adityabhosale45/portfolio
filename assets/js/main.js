@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Passcode protection for work items
+  const CORRECT_PASSCODE = 'U2hvd215d29yaw==';
+  
+  document.querySelectorAll('.work-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      const passcode = prompt('This project requires a passcode. Please enter it to continue:');
+      
+      if (passcode === null) {
+        // User clicked cancel
+        return;
+      }
+      
+      if (btoa(passcode) === CORRECT_PASSCODE) {
+        window.location.href = link.href;
+      } else {
+        alert('Incorrect passcode. Please try again.');
+      }
+    });
+  });
+    
     // Home link scroll to top
     const homeLink = document.getElementById('home-link');
     if (homeLink) {
