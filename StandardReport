@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work | Aditya Bhosale</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body> <!-- Toggle this only on the horizontal page -->
+
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a class="logo" href="index.html" aria-label="Home">
+                <img src="assets/images/logo.svg" alt="Aditya Bhosale logo" />
+                <span class="site-name">Aditya Bhosale</span>
+            </a>
+
+            <nav id="site-navigation" class="site-nav" aria-label="Primary navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html#work">Work</a></li>
+                    <li><a href="/about.html">About me</a></li>
+                    <li><a href="/resume.html">Resume</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="ri-menu-5-line"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="container project" role="main" tabindex="-1">
+
+        <!-- Hero Section -->
+        <section class="project-header" style="margin-bottom: 5rem;">
+            <p class="project-kicker">Case Study</p>
+            <h1 class="project-title">Enhancing User Experience for Standard Reports</h1>
+            <p class="project-subtitle">
+                A focused UX redesign that simplifies report workflows through clear navigation and intuitive layouts.
+                The solution uses responsive design and usability testing to reduce complexity and improve overall
+                efficiency, creating a smoother and more productive reporting experience.
+            </p>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="project-section">
+            <h2 class="section-title">Project Overview</h2>
+            <p class="section-content">
+                Standard Reports is a core product that enables staff to access dashboards for management review
+                and data driven decision making. Used by over 1,800 staff each month since its inception in December
+                2015,
+                the platform supports monitoring key operations, carrying out simple analysis, and managing portfolios
+                effectively. The project focuses on improving the overall user experience with clearer data visibility
+                and a more efficient filtering system across corporate, regional, country, global practice, and practice
+                manager views. Now in its third iteration, the cloud hosted application is built on Power BI and
+                integrated with the new Data Studio, delivering faster performance, consistent data, and a more reliable
+                reporting experience.
+            </p>
+
+            <img src="assets/images/StandardReport/SR-before.png"
+                alt="Before: Standard Reports dashboard with cluttered layout and unclear navigation"
+                style="border-radius: 6px;" />
+        </section>
+
+        <!-- Challenge/ Opportunity -->
+        <section class="project-section">
+            <h2 class="section-title">Challenge/ Opportunity</h2>
+            <p class="section-content">
+                The goal is to improve the experience to monitor key operations, perform simple data analysis, and/or
+                make data-driven decisions.
+            </p>
+            <img src="assets/images/StandardReport/Challenges.png"
+                alt="Challenges: Key issues with the original design including cluttered layout, unclear navigation, and inconsistent data presentation"
+                style="border-radius: 6px;" />
+        </section>
+
+        <!-- Addressing the Challenges -->
+        <section class="project-section">
+            <h2 class="section-title">Addressing the Challenges</h2>
+            <p class="section-content">
+                We followed a lean UX approach to address the various challenges of the project.
+            </p>
+            <img src="assets/images/StandardReport/Design-process.png"
+                alt="Challenges: Key issues with the original design including cluttered layout, unclear navigation, and inconsistent data presentation"
+                style="border-radius: 6px; width: 60%;" />
+        </section>
+
+        <!-- Key Insights -->
+        <section class="project-section">
+            <h2 class="section-title">UI Assessment</h2>
+            <p class="section-content">
+                A thorough qualitative assessment was conducted to understand the current pain points of the existing
+                system. The core objective of the assessment was to observe how users <strong>navigate, find
+                    information, and complete core tasks</strong> in the existing system.
+            </p>
+            <img src="assets/images/StandardReport/UI-assessment.png"
+                alt="UI Assessment: Key findings from the qualitative assessment of the existing system, highlighting pain points and areas for improvement"
+                style="border-radius: 6px;" />
+            <div class="section-subtitle">Key insights from the assessment</div>
+            <ul class="section-list">
+                <li>Almost all participants feel comfortable navigating the platform to find a report / dashboard
+                    because the structure of content in the new Standard Reports hasn't changed.</li>
+                <li>Overall, participants can complete most core tasks but have difficulty using Power BI filters,
+                    understand how Favorites / Bookmarks are different, and open a downloaded Power BI file.</li>
+                <li>Standard Reports has lost its much-needed simplicity because it is now more complex, less intuitive,
+                    and lacks features important to users.</li>
+                <li>The loading speed for the new site is slow for both HQ and COs participants which “annoys” them,
+                    disrupts their work, and “discourages” them from using it.</li>
+                <li>Data consistency is an issue as numbers in the new Standard Reports are not consistent and / or
+                    don't match with data from other platforms.</li>
+                <li>Most participants don't understand how different platforms are integrated with each other in the new
+                    Standard Reports, which creates confusion and affects productivity.</li>
+            </ul>
+        </section>
+
+        <section class="project-section">
+            <div class="section-subtitle">High Level Information Architecture</div>
+            <p class="section-content">
+                The information architecture of the new Standard Reports is designed to be simple, intuitive, and
+                efficient. The main navigation is organized around key user tasks and workflows, with clear labels
+                and logical groupings. The layout prioritizes important information and actions, while minimizing
+                clutter and distractions. The design also incorporates responsive elements to ensure a seamless
+                experience across different devices and screen sizes.
+            </p>
+            <img src="assets/images/StandardReport/Information-architecture.png"
+                alt="High Level Information Architecture diagram" />
+        </section>
+
+        <!-- Key Considerations -->
+        <section class="project-section">
+            <h2 class="section-title">Essential Factors Shaping Our Redesign Strategy</h2>
+            <p class="section-content">
+                The redesign process was guided by key considerations to ensure that the new Standard Reports
+                would meet user needs and improve the overall experience. These considerations included:
+            </p>
+            <div class="competitor-card">
+                <h3>Minimalistic design</h3>
+                <p class="competitor-content">With the addition of many reports and dashboards it was important to
+                    maintain the core purpose of the Standard reports tool. Hence, we followed a minimalistic design
+                    approach where we present the most valuable information upfront and allow the user to decide the
+                    next set of actions based on the need.</p>
+            </div>
+            <div class="competitor-card">
+                <h3>Ease of use</h3>
+                <p class="competitor-content">An intuitive design and simple information architecture that can enable
+                    the users to navigate through dashboards and reports with ease and quickly find the reports that
+                    they are looking for.</p>
+            </div>
+            <div class="competitor-card">
+                <h3>Seamless features</h3>
+                <p class="competitor-content">Applying the same visual language, interaction patterns, and terminology
+                    across all features for a familiar and predictable experience.</p>
+            </div>
+        </section>
+
+        <!-- Design Solution -->
+        <section class="project-section">
+            <div class="section-title">Facets of our design solution</div>
+            <div class="section-subtitle">Widget based Visualization</div>
+            <p class="section-content">
+                We applied the principles of modularity and reusability to the creation of data-driven charts and graphs
+                of Standard Reports by establishing a library of reusable visual components that can be combined and
+                customized to create various data visualizations.
+            </p>
+            <img src="assets/images/StandardReport/Widgets.png" alt="High Level Information Architecture diagram" />
+
+            <div class="section-subtitle">Leveraging Design System guidelines and components</div>
+            <p class="section-content">
+                To ensure consistency, efficiency, and quick turnaround we leveraged design components for Standard
+                Report design which also facilitated a seamless handoff with the development team.
+            </p>
+            <img src="assets/images/StandardReport/Design-system.png"
+                alt="High Level Information Architecture diagram" />
+
+            <div class="section-subtitle">Adopting High Charts for Data Visualizations</div>
+            <p class="section-content">
+                We applied high chart capabilities and framework to establish a design standard/ pattern for the charts
+                on the dashboard.
+            </p>
+            <img src="assets/images/StandardReport/High-charts.png" alt="High Level Information Architecture diagram" />
+        </section>
+
+        <!-- Usability Testing -->
+        <section class="project-section">
+            <h2 class="section-title">Usability Testing</h2>
+            <p class="section-content">
+                The purpose of this evaluative study is to gain high-level recommendations to improve the overall user
+                experience of the new Standard Reports before the system is developed. To validate the new version of
+                Standard Reports on improved navigation, especially to and from modules, and enhanced information
+                architecture. Individual participants were asked to complete tasks in order to test the systems
+                navigation, copy, and
+                overall functionality.
+            </p>
+            <p class="section-content">Participants were recruited through a random SR user list provided by the product
+                team, as well as some specific recommended names with harsh critics.</p>
+            <p class="section-content">Individual participants were asked
+                to complete tasks in order to test the systems navigation, copy, and overall functionality.</p>
+            <img src="assets/images/StandardReport/User-testing.png" alt="User testing diagram" />
+            <div class="section-subtitle">Feedbacks from the users</div>
+
+            <div class="outcome-item">
+                <div class="outcome-text">
+                    <i>"it's very similar to what we see right now with the new Operations Workspace. So it's very
+                        similar boxes with an icon. It looks kinda clean....... So this one looks cleaner and nicer from
+                        the design point of view."</i>
+                </div>
+            </div>
+
+            <div class="outcome-item">
+                <div class="outcome-text">
+                    <i>"I like this browse [by] option by region, countries and GPs. I don't think that we had it
+                        before, right? Or maybe I just didn't use that before.”</i>
+                </div>
+            </div>
+
+            <div class="outcome-item">
+                <div class="outcome-text">
+                    <i>"I think it is better because it is more intuitive and that for me that's more user-friendly. I
+                        think that navigating is a little easier because there are some additional shortcuts that I
+                        don't think are in the current standard reports."</i>
+                </div>
+            </div>
+
+            <div class="outcome-item">
+                <div class="outcome-text">
+                    <i>"This one seems fairly intuitive, so I think this one seems good to be able to have that and it
+                        kind of matches like what we have on our browsers."</i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations -->
+        <section class="project-section">
+            <h2 class="section-title">Recommendations</h2>
+            <p class="section-content">
+                We also received few recommendations that were prioritized for the next cycle of implementation.
+            </p>
+            <img src="assets/images/StandardReport/Recommendations.png" alt="User testing diagram" />
+        </section>
+
+        <!-- Recommendations -->
+        <section class="project-section final-product">
+            <h2 class="section-title">Final Product</h2>
+            <p class="section-content">
+                The new Standard Reports is a significant improvement over the previous version, with a more intuitive
+                design, clearer data presentation, and faster performance. The redesign has resulted in a more efficient
+                and enjoyable user experience, allowing users to easily navigate through dashboards and reports, find
+                the information they need, and make data-driven decisions with confidence.
+            </p>
+            <img src="assets/images/StandardReport/Screen1.png" alt="User testing diagram"/>
+            <img src="assets/images/StandardReport/Screen2.png" alt="User testing diagram"/>
+            <img src="assets/images/StandardReport/Screen3.png" alt="User testing diagram"/>
+            <img src="assets/images/StandardReport/Screen4.png" alt="User testing diagram"/>
+        </section>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo" aria-label="Footer">
+        <div class="container footer-inner">
+            <div class="footer-top">
+                <h2 id="contact-heading">Let's Talk</h2>
+                <p>and design perfect experiences for users.</p>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-left">
+                    <a class="footer-link" href="mailto:apbhosale45@gmail.com"
+                        aria-label="Email">apbhosale45@gmail.com</a>
+                    <a class="footer-link" href="https://www.linkedin.com/in/abhosale45/" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn
+                    </a>
+                </div>
+                <div class="footer-right">
+                    <p>Designed by Me • Developed by Me</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init();
+        });
+    </script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>
