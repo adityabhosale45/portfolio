@@ -990,4 +990,12 @@ body {
     .section-title {
         font-size: 1.5rem;
     }
+
+    .final-product img{
+    width: 100% !important;
+    }
+}
+
+.final-product img {
+    width: 60%;
 }
