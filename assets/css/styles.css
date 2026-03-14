@@ -173,7 +173,7 @@ body {
 }
 
 .hero-kicker,
-.skillsTools .hero-kicker {
+.skillsTools .hero-kicker, .project-kicker {
     font-size: 1rem;
     margin: 0 0 0.25rem;
     color: var(--accent-blue);
