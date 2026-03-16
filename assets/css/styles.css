@@ -543,9 +543,9 @@ body {
 }
 
 .footer-top {
-    display: flex;
-    gap: 1rem;
-    align-items: baseline;
+    border-bottom: 1px solid;
+    border-color: var(--accent-16);
+    padding-bottom: 1.5rem;
 }
 
 .footer-top h2 {
@@ -565,8 +565,9 @@ body {
 }
 
 .footer-top p {
+    font-size: 1.4rem;
     font-weight: 300;
-    color: var(--accent-75);
+    color: var(--accent-50);
 }
 
 .footer-link:hover,
@@ -576,7 +577,7 @@ body {
 }
 
 .footer-bottom {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     font-weight: 600;
     display: flex;
     gap: 5rem;
