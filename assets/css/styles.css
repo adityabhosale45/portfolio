@@ -588,6 +588,7 @@ body {
 .footer-left {
     display: flex;
     gap: 5rem;
+    order: 2;
 }
 
 .skillsTools {
